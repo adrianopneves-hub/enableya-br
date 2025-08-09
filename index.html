@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DataLix | ROI Instantâneo para seu ERP Linx no Brasil</title>
+  <link rel="icon" type="image/png" href="https://placehold.co/32x32/0284C7/FFFFFF?text=D" />
+
+  <!-- SEO + Social -->
+  <meta name="description" content="Templates de relatórios e dashboards para o sistema Linx. Instale templates gratuitos de alto impacto e obtenha ROI imediato. Foco em automação e BI para o varejo brasileiro." />
+  <meta name="keywords" content="Linx, ERP, DMS, relatórios, dashboards, templates, BI, business intelligence, Brasil, varejo, automotivo, giro de estoque, inadimplência" />
+  <meta property="og:title" content="DataLix | ROI Instantâneo para seu ERP Linx no Brasil" />
+  <meta property="og:description" content="Pare de perder tempo com planilhas. Instale nossos templates gratuitos em minutos e veja o valor no primeiro dia. Especializado para clientes Linx no Brasil." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://i.imgur.com/G5gE50G.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --brand-blue: #0284C7; /* Azul Linx/confiável */
+      --brand-amber: #F59E0B; /* Destaque para ROI e valor */
+      --ink: #1E293B; 
+      --slate: #475569;
+      --soft-bg: #F8FAFC;
+    }
+    html, body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--soft-bg);
+      color: var(--ink);
+      scroll-behavior: smooth;
+    }
+    .btn { transition: transform .2s ease, box-shadow .2s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .card { box-shadow: 0 10px 30px rgba(14, 21, 31, 0.07); border: 1px solid #E2E8F0; }
+    .glass { backdrop-filter: saturate(150%) blur(8px); background-color: rgba(255, 255, 255, 0.85); }
+    .sticky-cta-shadow { box-shadow: 0 -8px 24px rgba(14, 21, 31, 0.08); }
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
+      .reveal.in { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="antialiased selection:bg-sky-100 selection:text-sky-900">
+  <!-- Barra de Anúncio -->
+  <div class="w-full bg-amber-50 border-b border-amber-200 text-amber-900 text-sm">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-center gap-2 text-center">
+      <span class="font-semibold hidden sm:inline">Novo:</span>
+      <span>Instale nosso <b>Template Gratuito de Giro de Estoque</b> e otimize seu capital de giro.</span>
+      <a href="#solucoes" class="underline font-semibold whitespace-nowrap">Experimente agora →</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 inset-x-0 z-40 glass border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3" aria-label="DataLix Home" title="DataLix Home">
+        <img src="https://placehold.co/150x40/FFFFFF/0284C7?text=DataLix" alt="DataLix Logo" class="h-8 md:h-10 w-auto" />
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#solucoes" class="text-slate-600 hover:text-sky-600">Soluções</a>
+        <a href="#como-funciona" class="text-slate-600 hover:text-sky-600">Como Funciona</a>
+        <a href="#planos" class="text-slate-600 hover:text-sky-600">Planos</a>
+        <a href="#faq" class="text-slate-600 hover:text-sky-600">FAQ</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a id="waHeaderBtn" href="#" class="btn inline-flex items-center bg-emerald-500 text-white font-bold py-2 px-4 rounded-lg text-sm">Fale no WhatsApp</a>
+        <a href="#form" class="btn inline-flex items-center bg-amber-500 text-white font-bold py-2 px-4 rounded-lg text-sm">Ver Demonstração</a>
+      </div>
+      <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300" aria-label="Abrir menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 bg-white">
+      <div class="px-6 py-3 grid gap-3 text-sm">
+        <a href="#solucoes" class="py-2">Soluções</a>
+        <a href="#como-funciona" class="py-2">Como Funciona</a>
+        <a href="#planos" class="py-2">Planos</a>
+        <a href="#faq" class="py-2">FAQ</a>
+        <a href="#form" class="btn mt-2 inline-flex justify-center bg-amber-500 text-white font-bold py-2 rounded-lg">Ver Demonstração</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="pt-16 md:pt-24">
+    <section class="relative">
+      <div class="absolute inset-0 -z-10 bg-gradient-to-b from-white via-white to-sky-50/40"></div>
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight" style="color: var(--ink);">Transforme seus dados Linx em lucro. <span class="text-sky-600">Relatórios inteligentes em minutos, não em meses.</span></h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl">Instale nossos templates de relatórios gratuitos para o <strong>ERP Linx</strong> e obtenha insights valiosos no mesmo dia. Sem projetos complexos ou custos de implantação, com automação e escalabilidade para todos os setores do varejo brasileiro.</p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#solucoes" class="btn inline-flex items-center justify-center bg-amber-500 text-white font-bold px-6 py-3 rounded-xl shadow-lg">Instalar Template Gratuito</a>
+            <a href="#planos" class="btn inline-flex items-center justify-center px-6 py-3 rounded-xl border border-slate-300 text-slate-700 font-semibold">Ver Planos →</a>
+          </div>
+          <div class="mt-8 flex items-center gap-4 text-sm text-slate-500">
+             <span>Baseado na inteligência de quem atende <strong>45% do varejo</strong>.</span>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="card bg-white rounded-2xl p-4">
+            <div class="aspect-video w-full rounded-xl bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img src="https://i.imgur.com/G5gE50G.png" alt="Matriz de Priorização de Templates para Linx" class="w-full h-full object-cover" />
+            </div>
+            <div class="mt-4 text-center">
+              <h3 class="font-bold text-slate-800">Pronto para Otimizar?</h3>
+              <p class="text-sm text-slate-500">Comece de graça e sinta o impacto hoje mesmo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section id="como-funciona" class="py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-extrabold">Do Clique ao Insight em Minutos.</h2>
+          <p class="mt-4 text-lg text-slate-600">Três passos simples para gerar relatórios e dashboards a partir dos seus dados Linx.</p>
+        </div>
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+          <div class="card bg-white rounded-2xl p-8 text-center">
+            <div class="mx-auto mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+            <h3 class="font-bold text-xl">1. Conecte</h3>
+            <p class="mt-2 text-slate-700">Autorize a conexão segura com sua base de dados Linx (ERP/DMS).</p>
+          </div>
+          <div class="card bg-white rounded-2xl p-8 text-center">
+             <div class="mx-auto mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <h3 class="font-bold text-xl">2. Escolha o Template</h3>
+            <p class="mt-2 text-slate-700">Selecione um dos templates gratuitos para começar a gerar valor imediato.</p>
+          </div>
+          <div class="card bg-white rounded-2xl p-8 text-center">
+            <div class="mx-auto mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-100 text-emerald-600"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+            <h3 class="font-bold text-xl">3. Analise e Escale</h3>
+            <p class="mt-2 text-slate-700">Receba dashboards automáticos e, quando estiver pronto, faça o upgrade para o pacote completo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soluções (Templates Gratuitos) -->
+    <section id="solucoes" class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-extrabold">Comece a Otimizar sua Gestão a Custo Zero.</h2>
+          <p class="mt-4 text-lg text-slate-600">Templates gratuitos de alto impacto para desbloquear o valor dos seus dados no primeiro dia.</p>
+        </div>
+        <div class="mt-12 grid gap-8">
+          <article class="grid md:grid-cols-2 gap-10 items-center card bg-white rounded-2xl overflow-hidden">
+            <div class="p-8 md:p-12">
+              <h3 class="text-2xl font-bold">Análise de Giro de Estoque</h3>
+              <p class="mt-2 text-sm font-semibold text-emerald-700">"Quando preciso decidir quais produtos devo repor ou liquidar, quero saber quais itens vendem rápido e quais estão parados para otimizar capital de giro."</p>
+              <p class="mt-2 text-slate-700">Receba um dashboard com classificação ABC, dias médios em estoque e alertas de ruptura ou produtos parados. O template de maior impacto e menor esforço.</p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="#form" class="btn bg-amber-500 text-white font-bold py-3 px-5 rounded-lg">Instalar Gratuitamente</a>
+              </div>
+            </div>
+            <div class="bg-slate-50 h-full flex items-center justify-center p-6">
+              <img src="https://i.imgur.com/r5PExlX.png" alt="Dashboard de Giro de Estoque" class="reveal rounded-lg shadow-lg" loading="lazy" />
+            </div>
+          </article>
+          <article class="grid md:grid-cols-2 gap-10 items-center card bg-white rounded-2xl overflow-hidden">
+            <div class="bg-slate-50 h-full flex items-center justify-center p-6 order-last md:order-first">
+              <img src="https://i.imgur.com/gKj3eYv.png" alt="Dashboard de Orçamento Real vs Previsto" class="reveal rounded-lg shadow-lg" loading="lazy" />
+            </div>
+            <div class="p-8 md:p-12">
+              <h3 class="text-2xl font-bold">Relatório de Orçamento (Real x Previsto)</h3>
+              <p class="mt-2 text-sm font-semibold text-rose-700">"Quando estou monitorando a saúde financeira, quero saber se estou dentro do orçamento para corrigir desvios rapidamente."</p>
+              <p class="mt-2 text-slate-700">Compare o orçado vs. realizado mensalmente, veja o percentual de atingimento de meta e o ranking de desempenho por filial ou categoria.</p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="#form" class="btn bg-amber-500 text-white font-bold py-3 px-5 rounded-lg">Instalar Gratuitamente</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prova Social -->
+    <section id="proof" class="py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+        <blockquote class="card bg-white rounded-2xl p-8">
+          <p class="text-xl font-semibold text-slate-800">“Conseguimos identificar e liquidar 20% do nosso estoque parado no primeiro mês. A visão que o template gratuito nos deu foi tão clara que a decisão de contratar o pacote completo foi óbvia.”</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/64?img=12" class="w-12 h-12 rounded-full" alt="avatar" />
+            <div>
+              <div class="font-bold">Roberto S.</div>
+              <div class="text-sm text-slate-500">Gerente de Operações, Varejo de Moda - SP</div>
+            </div>
+          </div>
+        </blockquote>
+        <div class="card bg-white rounded-2xl p-8">
+          <h3 class="font-bold text-slate-900">Resultados Típicos dos Nossos Clientes</h3>
+          <ul class="mt-4 grid sm:grid-cols-3 gap-4 text-center">
+            <li class="bg-slate-50 rounded-xl p-4">
+              <div class="text-3xl font-extrabold text-emerald-600">-15%</div>
+              <div class="text-xs text-slate-500">Estoque Parado</div>
+            </li>
+            <li class="bg-slate-50 rounded-xl p-4">
+              <div class="text-3xl font-extrabold text-emerald-600">+10%</div>
+              <div class="text-xs text-slate-500">Margem de Lucro</div>
+            </li>
+            <li class="bg-slate-50 rounded-xl p-4">
+              <div class="text-3xl font-extrabold text-emerald-600">&lt; 1 dia</div>
+              <div class="text-xs text-slate-500">Tempo para Análise</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planos -->
+    <section id="planos" class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-extrabold">Da Operação à Orquestração de Dados.</h2>
+          <p class="mt-4 text-lg text-slate-600">Um caminho lógico de valor que cresce com a sua necessidade de análise.</p>
+        </div>
+        <div class="mt-12 grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
+          <div class="card bg-white rounded-2xl p-8 flex flex-col h-full">
+            <h3 class="text-2xl font-bold">Essencial</h3>
+            <p class="text-sky-600 font-semibold mt-1">O Ponto de Partida</p>
+            <p class="mt-3 text-slate-600 h-20">Comece a tomar decisões baseadas em dados com nossos 2 templates de maior impacto, sem custo.</p>
+            <div class="my-6"><span class="text-4xl font-extrabold">Grátis</span></div>
+            <a href="#solucoes" class="btn w-full text-center bg-slate-800 text-white font-bold py-3 rounded-lg mt-auto">Instalar Templates Gratuitos</a>
+          </div>
+          <div class="card bg-white rounded-2xl border-2 border-sky-500 p-8 relative scale-[1.02] shadow-lg flex flex-col h-full">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded-full">Mais Popular</span>
+            <h3 class="text-2xl font-bold">Premium</h3>
+            <p class="text-sky-600 font-semibold mt-1">O Motor de ROI</p>
+            <p class="mt-3 text-slate-600 h-20">Acesso a todos os 8 templates premium, incluindo Análise de Rentabilidade, Pipeline de Vendas e Previsão de Demanda.</p>
+            <div class="my-6"><span class="text-4xl font-extrabold">R$ 490</span><span class="text-slate-500"> /mês (pacote completo)</span></div>
+            <a href="#form" class="btn w-full text-center bg-amber-500 text-white font-bold py-3 rounded-lg mt-auto">Explorar Pacote Premium</a>
+          </div>
+          <div class="card bg-white rounded-2xl p-8 flex flex-col h-full">
+            <h3 class="text-2xl font-bold">Sob Medida</h3>
+            <p class="text-sky-600 font-semibold mt-1">Customização Multi-Setorial</p>
+            <p class="mt-3 text-slate-600 h-20">Desenvolvimento de templates e integrações customizadas para as necessidades exatas da sua operação.</p>
+            <div class="my-6"><span class="text-4xl font-extrabold">Customizado</span></div>
+            <a href="#form" class="btn w-full text-center bg-slate-200 text-slate-900 font-bold py-3 rounded-lg mt-auto">Agendar Conversa</a>
+          </div>
+        </div>
+         <div class="text-center mt-8 text-slate-600">
+            <p>Precisa de apenas um template? Oferecemos planos individuais a partir de <strong>R$ 99/mês</strong>.</p>
+         </div>
+      </div>
+    </section>
+    
+    <!-- Formulário de Contato -->
+    <section id="form" class="py-16 md:py-24">
+        <div class="max-w-xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold">Pronto para Começar?</h2>
+            <p class="mt-4 text-lg text-slate-600">Preencha o formulário ou chame no WhatsApp. Nossa equipe agendará uma demonstração rápida e sem compromisso.</p>
+            <form id="leadForm" class="mt-8 grid gap-4 text-left card bg-white rounded-2xl p-8">
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="name" class="font-semibold text-sm">Nome Completo</label>
+                        <input required id="name" name="name" class="mt-1 w-full rounded-lg border border-slate-300 px-4 py-3" placeholder="Ex: João da Silva" />
+                    </div>
+                    <div>
+                        <label for="email" class="font-semibold text-sm">E-mail de Trabalho</label>
+                        <input required id="email" name="email" type="email" class="mt-1 w-full rounded-lg border border-slate-300 px-4 py-3" placeholder="joao@suaempresa.com.br" />
+                    </div>
+                </div>
+                <div>
+                    <label for="interest" class="font-semibold text-sm">Tenho interesse em...</label>
+                    <select id="interest" name="interest" class="mt-1 w-full rounded-lg border border-slate-300 px-4 py-3 appearance-none bg-white">
+                        <option>Templates Gratuitos</option>
+                        <option>Pacote Premium (Todos os Templates)</option>
+                        <option>Plano Sob Medida (Customização)</option>
+                        <option>Apenas uma Demonstração</option>
+                    </select>
+                </div>
+                <button class="btn bg-sky-600 text-white font-bold rounded-lg px-5 py-3 w-full">Agendar Minha Demonstração</button>
+                <p class="text-xs text-slate-500 text-center">Ao continuar, você concorda com nossos <a class="underline" href="#">Termos</a> e <a class="underline" href="#">Privacidade</a>.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 md:py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-center">Perguntas Frequentes</h2>
+        <div class="mt-10 divide-y divide-slate-200 border border-slate-200 rounded-2xl overflow-hidden">
+          <details class="group p-6">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <span class="font-semibold">O template gratuito é realmente grátis?</span>
+              <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-slate-600">Sim. Instale, use e comprove o valor. Se você gostar e quiser mais poder de análise, pode fazer o upgrade para o Pacote Premium quando estiver pronto. Sem truques, sem necessidade de cartão de crédito para começar.</p>
+          </details>
+          <details class="group p-6">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <span class="font-semibold">Como vocês acessam meus dados do sistema Linx?</span>
+              <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-slate-600">Nossa plataforma utiliza as integrações e APIs disponíveis do ecossistema Linx para extrair os dados necessários para a geração dos relatórios. Seguimos as melhores práticas de segurança, acessando apenas as informações essenciais para cada template, sem armazenar dados sensíveis.</p>
+          </details>
+          <details class="group p-6">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <span class="font-semibold">Isso funciona para o meu setor (farmácia, moda, etc.)?</span>
+              <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-slate-600">Sim. Nossos templates são projetados para serem multi-setoriais. As métricas de Giro de Estoque, Orçamento e Inadimplência, por exemplo, são universais para o varejo. Nosso plano "Sob Medida" pode parametrizar qualquer template para as particularidades do seu negócio.</p>
+          </details>
+           <details class="group p-6">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <span class="font-semibold">Quais são os templates pagos?</span>
+              <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-slate-600">O pacote premium inclui 8 templates: Negociação de dívida, Relatório de inadimplência, Monitoramento de margens, Pipeline de vendas, Análise de rentabilidade por cliente, Acompanhamento de campanhas, Controle de SLA e Previsão de demanda.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-300">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-8">
+      <div class="col-span-2">
+        <a href="#" title="DataLix Home"><img src="https://placehold.co/150x40/1E293B/94A3B8?text=DataLix" alt="DataLix Logo" class="h-8 w-auto" /></a>
+        <p class="mt-3 text-sm text-slate-400">Desbloqueando o potencial do varejo brasileiro através de dados.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Produto</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="#solucoes" class="hover:underline">Templates</a></li>
+          <li><a href="#planos" class="hover:underline">Preços</a></li>
+          <li><a href="#faq" class="hover:underline">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Empresa</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="#" class="hover:underline">Privacidade</a></li>
+          <li><a href="#" class="hover:underline">Termos</a></li>
+          <li><a href="#form" class="hover:underline">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-6 py-6 text-sm text-slate-500 text-center md:text-left">© 2025 DataLix — São Paulo, SP, Brasil. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- CTA Flutuante -->
+  <div class="fixed bottom-0 inset-x-0 bg-white/90 glass border-t border-slate-200 sticky-cta-shadow z-30">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-3">
+      <span class="text-sm text-slate-700 font-semibold hidden md:inline">Pronto para ver o valor hoje mesmo?</span>
+      <div class="flex items-center gap-3 w-full md:w-auto">
+        <a href="#solucoes" class="btn bg-amber-500 text-white font-bold py-2 px-4 rounded-lg w-full text-center">Instalar Grátis</a>
+        <a id="waStickyBtn" href="#" class="btn bg-emerald-500 text-white py-2 px-4 rounded-lg font-bold hidden sm:inline-flex">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Configuração ---
+        const WHATSAPP_NUMBER = '5511999998888'; // Nº de WhatsApp para o Brasil
+
+        // --- Menu Mobile ---
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        menuBtn?.addEventListener('click', () => {
+            mobileNav.classList.toggle('hidden');
+        });
+
+        // --- Navegação Suave ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Fecha o menu mobile se estiver aberto
+                if (!mobileNav.classList.contains('hidden')) {
+                    mobileNav.classList.add('hidden');
+                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // --- Formulário de Lead ---
+        function handleForm(form) {
+            form?.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const data = Object.fromEntries(new FormData(form).entries());
+                const prefill = `Olá, meu nome é ${data.name}. Tenho interesse em uma demonstração do produto: ${data.interest}. Meu email é ${data.email}.`;
+                
+                // Simula um envio e mostra uma mensagem de sucesso/redirecionamento
+                const submitButton = form.querySelector('button');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Enviando...';
+
+                setTimeout(() => {
+                    openWhatsApp(prefill);
+                    form.reset();
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Agendar Minha Demonstração';
+                    // Usando um modal customizado em vez de alert()
+                    showCustomAlert('Obrigado! Estamos te redirecionando para o WhatsApp para agendar sua demonstração.');
+                }, 1000);
+            });
+        }
+        handleForm(document.getElementById('leadForm'));
+        
+        // --- Links de WhatsApp ---
+        function openWhatsApp(prefill) {
+            const base = `https://wa.me/${WHATSAPP_NUMBER}`;
+            const text = encodeURIComponent(prefill || 'Olá! Gostaria de uma demonstração dos templates para Linx.');
+            window.open(`${base}?text=${text}`, '_blank');
+        }
+        document.getElementById('waHeaderBtn')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            openWhatsApp('Olá! Gostaria de conversar sobre os templates para o sistema Linx.');
+        });
+        document.getElementById('waStickyBtn')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            openWhatsApp('Olá! Tenho uma pergunta rápida sobre os planos.');
+        });
+
+        // --- Animação de Scroll ---
+        const revealElements = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => observer.observe(el));
+        } else {
+            revealElements.forEach(el => el.classList.add('in'));
+        }
+
+        // --- Modal de Alerta Customizado ---
+        function showCustomAlert(message) {
+            // Remove qualquer alerta existente
+            const existingAlert = document.getElementById('custom-alert');
+            if(existingAlert) existingAlert.remove();
+
+            // Cria o modal
+            const alertModal = document.createElement('div');
+            alertModal.id = 'custom-alert';
+            alertModal.style.cssText = 'position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background-color: #1E293B; color: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 9999; font-family: "Inter", sans-serif; font-size: 14px;';
+            alertModal.textContent = message;
+            document.body.appendChild(alertModal);
+
+            // Remove o modal após alguns segundos
+            setTimeout(() => {
+                alertModal.style.transition = 'opacity 0.5s ease';
+                alertModal.style.opacity = '0';
+                setTimeout(() => alertModal.remove(), 500);
+            }, 3500);
+        }
+    });
+  </script>
+</body>
+</html>
